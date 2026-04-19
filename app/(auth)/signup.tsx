@@ -31,7 +31,7 @@ import { STARS } from "../../src/lib/stars";
 
 const { width, height } = Dimensions.get("window");
 
-// --- SVG Components ---
+// Svg Components
 const MVLogo = () => (
   <Svg width="24" height="24" viewBox="0 0 100 100" fill="none">
     <Line x1="50" y1="50" x2="50" y2="18" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" />
@@ -48,7 +48,7 @@ const MVLogo = () => (
   </Svg>
 );
 
-// --- Types ---
+// Types
 interface ModalAction {
   label: string;
   onClick: () => void;
@@ -67,7 +67,7 @@ interface VerifyEmailScreenProps {
   onGoToLogin: () => void;
 }
 
-// --- POST-REGISTRATION SUCCESS SCREEN ---
+// Post-registration Success Screen
 const VerifyEmailScreen = ({ email, onGoToLogin }: VerifyEmailScreenProps) => (
   <View style={{ alignItems: "center" }}>
     <LinearGradient
@@ -117,7 +117,7 @@ const VerifyEmailScreen = ({ email, onGoToLogin }: VerifyEmailScreenProps) => (
   </View>
 );
 
-// --- STYLED MODAL ---
+// Styled Modal
 const CustomModal = ({ icon, title, lines, actions, accent = "#4ade80" }: ModalProps) => (
   <RNModal transparent animationType="fade" visible={true}>
     <View style={styles.modalOverlay}>
@@ -213,7 +213,7 @@ export default function Signup() {
     setLoading(false);
   };
 
-  // --- Phone Auth (Requires Expo Firebase Recaptcha in reality) ---
+  // Phone Auth (requires Expo Firebase Recaptcha In Reality)
   const handleSendOTP = async () => {
     setError("Phone Auth natively requires expo-firebase-recaptcha or @react-native-firebase/auth.");
   };
@@ -222,7 +222,7 @@ export default function Signup() {
     // Implementation placeholder for native
   };
 
-  // --- Google Auth (Requires Google Sign-in Library) ---
+  // Google Auth (requires Google Sign-in Library)
   const handleGoogle = async () => {
     setError("Google Sign-In requires @react-native-google-signin/google-signin in Expo.");
   };
@@ -444,7 +444,7 @@ export default function Signup() {
   );
 }
 
-// --- Stylesheet ---
+// Stylesheet
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
@@ -540,7 +540,7 @@ const styles = StyleSheet.create({
   footerText: { fontSize: 13, color: "#555" },
   footerLink: { color: "#fff", fontSize: 13, fontWeight: "600", borderBottomWidth: 1, borderBottomColor: "#333" },
 
-  // --- Verify Screen Styles ---
+  // Verify Screen Styles
   envelopeIcon: { width: 80, height: 80, borderRadius: 40, borderWidth: 1, borderColor: "rgba(124,92,252,0.3)", alignItems: "center", justifyContent: "center", marginBottom: 24 },
   successTitle: { fontSize: 22, fontWeight: "700", color: "#fff", marginBottom: 10, letterSpacing: -0.3 },
   successDesc: { fontSize: 14, color: "#666", marginBottom: 24, lineHeight: 24, textAlign: "center" },
@@ -554,7 +554,7 @@ const styles = StyleSheet.create({
   spamWarning: { flexDirection: "row", backgroundColor: "rgba(250,204,21,0.06)", borderWidth: 1, borderColor: "rgba(250,204,21,0.3)", borderStyle: "dashed", borderRadius: 12, padding: 14, marginBottom: 24, alignItems: "flex-start" },
   spamWarningText: { flex: 1, fontSize: 12.5, color: "#fbbf24", lineHeight: 20 },
 
-  // --- Modal Styles ---
+  // Modal Styles
   modalOverlay: { flex: 1, justifyContent: "center", alignItems: "center", padding: 24, backgroundColor: "rgba(0,0,0,0.8)" },
   modalContent: { backgroundColor: "rgba(8,8,14,0.98)", borderWidth: 1, borderColor: "rgba(255,255,255,0.1)", borderRadius: 24, padding: 36, width: "100%", maxWidth: 420 },
   modalIcon: { fontSize: 48, textAlign: "center", marginBottom: 20 },
